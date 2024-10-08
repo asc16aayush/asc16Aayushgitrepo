@@ -1,0 +1,36 @@
+               
+               
+               /* type selector */
+               p {
+                   background-color: rgb(216, 11, 234);
+               }
+
+               /* pseudo element */
+               .name::before {
+                   content: "*";
+                   color: brown;
+                   font-size: 23px;
+
+               }
+
+               /* class selector */
+               .name {
+                   color: green;
+               }
+
+               /* id selector */
+               #_1 {
+                   color: blue;
+               }
+
+               /* pseudo class */
+               button:hover {
+                   color: rgb(237, 100, 136);
+                   background-color: aqua;
+               }
+
+               /* universal selector */
+               *{
+                background-color: aqua;
+               }
+
