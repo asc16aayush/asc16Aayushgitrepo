@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive button</title>
+
+
+</head>
+
+<body style="background-color: bisque;">
+
+    <h1 style="color: red;">Dynamic webpage with responsive button</h1>
+    <div style="background-color: rgb(151, 195, 246);
+align-items: center;
+justify-content: center;
+display: flex;
+margin:auto;
+height: 400px;
+width: 400px;
+border: 1px solid black;
+border-radius: 10%;">
+        <form>
+            <div style="border: 2px dotted black;">
+            videos: <br>
+            <select id="videodropdown" onchange="navigatetovideo()">
+                <option value="https://www.youtube.com/watch?v=4qVRFgRcFkk"> comedy</option>
+                <option value="https://www.youtube.com/watch?v=kCc8FmEb1nY"> technical</option>
+                <option value="https://www.youtube.com/watch?v=-qReeg7imGc"> drama</option>
+            </select>
+            </div>
+            <script>
+                function navigatetovideo() {
+                    const dropdown = document.getElementById('videodropdown');
+                    const selectedValue = dropdown.value;
+                    if (selectedValue) {
+                        window.open(selectedValue, '_self'); // Open the video in a same tab
+
+                    }
+                }
+            </script>
+
+
+
+            <br><br>
+            <div style="border: 2px solid red;">
+            new videos: <br>
+            <button type="button" id="comedy" onclick="video1()">comedy</button>
+            <button type="button" id="technical" onclick="video2()">technical</button>
+            <button type="button" id="chatgpt" onclick="video3()">chatgpt</button>
+        </div>
+
+
+            <div id="videocontainer"></div>
+            <script>
+                function video1() {
+                    const videocontainer = document.getElementById('videocontainer');
+                    videocontainer.innerHTML = '<iframe width="300" height="200" src="https://www.youtube.com/embed/qhReqB3eLx0" title="ताज महल किसने बनाया | School Classroom Jokes | Desi Comedy Video | pklodhpur" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+
+                }
+
+                function video2() {
+                    const videocontainer = document.getElementById('videocontainer');
+                    videocontainer.innerHTML = '<iframe width="300" height="200" src="https://www.youtube.com/embed/fzWzPXEhPvA" title="Signal / Technology Opener (After Effects Template) ★ AE Templates" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+
+                }
+
+                function video3() {
+                    const videocontainer = document.getElementById('videocontainer');
+                    videocontainer.innerHTML = '<iframe width="300" height="200" src="https://www.youtube.com/embed/3ao7Z8duDXc" title="Chat GPT Explained in 5 Minutes | What Is Chat GPT ? | Introduction To Chat GPT | Simplilearn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+
+                }
+
+
+            </script>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -8,6 +8,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+    <script src="d1_form.js"></script>
+
     
     
 </head>
@@ -43,6 +45,57 @@
     <input type="radio" name="meal">non-neg
 
     <br><br>
+    videos: <br>
+    <select id="videodropdown" onchange="navigatetovideo()">
+        <option value="https://www.youtube.com/watch?v=4qVRFgRcFkk"> comedy</option>
+        <option value="https://www.youtube.com/watch?v=kCc8FmEb1nY"> technical</option>
+        <option value="https://www.youtube.com/watch?v=-qReeg7imGc"> drama</option>
+    </select>
+    <script>
+        function navigatetovideo(){
+            
+        }
+    </script>
+
+
+
+<br><br>
+        new videos: <br>
+    <button type="button" id="comedy" onclick="video1()">comedy</button>
+    <button type="button" id="technical" onclick="video2()">technical</button>
+    <button type="button" id="chatgpt" onclick="video3()">chatgpt</button>
+
+        <div id="videocontainer"></div>
+        <script>
+            function video1(){
+                    const videocontainer=document.getElementById('videocontainer');
+                    videocontainer.innerHTML='<iframe width="740" height="416" src="https://www.youtube.com/embed/qhReqB3eLx0" title="ताज महल किसने बनाया | School Classroom Jokes | Desi Comedy Video | pklodhpur" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+
+            }
+
+            function video2(){
+                    const videocontainer=document.getElementById('videocontainer');
+                    videocontainer.innerHTML='<iframe width="740" height="416" src="https://www.youtube.com/embed/fzWzPXEhPvA" title="Signal / Technology Opener (After Effects Template) ★ AE Templates" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+
+            }
+
+            function video3(){
+                    const videocontainer=document.getElementById('videocontainer');
+                    videocontainer.innerHTML='<iframe width="740" height="416" src="https://www.youtube.com/embed/3ao7Z8duDXc" title="Chat GPT Explained in 5 Minutes | What Is Chat GPT ? | Introduction To Chat GPT | Simplilearn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+
+            }
+
+
+        </script>
+
+
+
+
+
+
+    <br><br><br>
+
+
 
     Payment : <br>
     <select>
