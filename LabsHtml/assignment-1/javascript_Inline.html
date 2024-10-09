@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script </title>
+    <!-- <script>console.log('welcome to js')</script> -->
+
+
+    <script>
+    console.log("s0");
+    </script>
+
+    <script src="external.js"></script>
+
+    <script>
+        function internalScript(){
+            console.log('this is Internal script');
+        }
+
+            console.log("*");
+            internalScript();
+        
+    </script>
+    <script>
+        console.log("s1");
+    </script>
+
+    <script>
+        console.log("***");
+        internalScript();
+
+    </script>
+
+
+</head>
+<body>
+    <form>
+            <!-- inline/ belongs to element -->
+
+        <button onclick="alert('Welcomr js');">
+        Get Message
+    </button>
+
+    
+    <button onclick="alert('thank you');console.log('thank you')">
+        Say ThankYou!
+    </button>
+
+    <!-- by default/ submit the form -->
+    <button onclick="internalScript()"> Internal(Submit and refresh the page)</button>
+
+    <!-- does not submit to the server -->
+    <button type="button" onclick="internalScript"> Internal(does not refresh)</button>
+
+    <button type="button" onclick="externalscript()"> this is for external script button</button>
+
+    <button type="button" onclick="loop_demo()"> this is for external script loop button</button>
+    </form>
+    
+</body>
+</html>
