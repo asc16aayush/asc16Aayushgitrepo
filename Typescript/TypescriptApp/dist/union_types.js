@@ -1,22 +1,9 @@
-function printID(id:string|number){
+function printID(id) {
     console.log(id);
 }
-
 printID(101);
 printID("101");
-
-interface Circle{
-    kind:"circle";
-
-    radius:number;
-}
-
-interface Square{
-    kind:"square";
-    sideLength:number;
-}
-
-function getArea(shape: Circle | Square): number {
+function getArea(shape) {
     switch (shape.kind) {
         case "circle":
             // ** is the exponentiation operator in TypeScript, which raises the base to the power of the exponent.
@@ -25,18 +12,13 @@ function getArea(shape: Circle | Square): number {
             return shape.sideLength ** 2;
     }
 }
-
-
-
-const myCircle:Circle={
-    kind:"circle",
-    radius:5
+const myCircle = {
+    kind: "circle",
+    radius: 5
 };
-
-const mySquare:Square={
-    kind:"square",
-    sideLength:4
+const mySquare = {
+    kind: "square",
+    sideLength: 4
 };
-
 console.log(getArea(myCircle));
 console.log(getArea(mySquare));

@@ -100,7 +100,7 @@ console.log(Direction1.Right);
 
 
 
-// costructor in details
+// costructor and inheritence in details
 
 class Phone{
     phoneFeature : string;
