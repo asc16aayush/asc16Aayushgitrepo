@@ -1,0 +1,78 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb hover effect</title>
+</head>
+<body>
+
+    <div style="height: 300px; width: 300px; background-color: black;border: 3px;">
+
+        <img src="off.gif" id="bulb" style="margin: 100px;"
+        onmouseover="window.document.getElementById('bulb').src='on.gif'"
+        onmouseout="window.document.getElementById('bulb').src='off.gif'"> 
+    </div>
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Bulb</title>
+    <style>
+        /* body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        } */
+        .dark {
+            background-color: black;
+            /* width: 50%; */
+            
+        }
+        /* .light {
+            background-color: whitesmoke;
+            width: 50%;
+        } */
+        .bulb {
+            width: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dark" id="darkArea">
+        <img src="on.gif" alt="On Bulb" class="bulb" id="onBulb">
+    </div>
+    <div class="light" id="lightArea">
+        <img src="off.gif" alt="Off Bulb" class="bulb" id="offBulb">
+    </div>
+
+    <script>
+        const onBulb = document.getElementById('onBulb');
+        const offBulb = document.getElementById('offBulb');
+        const darkArea = document.getElementById('darkArea');
+
+        onBulb.addEventListener('click', () => {
+            onBulb.style.display = 'none'; 
+        });
+
+        offBulb.addEventListener('click', () => {
+            const newBulb = document.createElement('img');
+            newBulb.src = 'on.gif'; 
+            newBulb.alt = 'New On Bulb';
+            newBulb.className = 'bulb';
+
+            newBulb.addEventListener('click', () => {
+                newBulb.style.display = 'none'; 
+            });
+
+            darkArea.appendChild(newBulb); 
+        });
+    </script>
+</body>
+</html>

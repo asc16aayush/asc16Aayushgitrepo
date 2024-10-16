@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Map with User Input</title>
+</head>
+<body>
+  <h2>Double Your Numbers</h2>
+  <p>Enter numbers separated by commas (e.g., 1,2,3,4):</p>
+  <input type="text" id="userInput" placeholder="Enter numbers">
+  <button onclick="doubleNumbers()">Double Numbers</button>
+  <p>Result: <span id="result"></span></p>
+
+  <script>
+    function doubleNumbers() {
+      // Get the user input as a string
+      const input = document.getElementById("userInput").value;
+      
+      // Split the input into an array of strings, then convert each to a number
+      const numbers = input.split(',').map(Number);
+      
+      // Use map to double each number
+      const doubledNumbers = numbers.map(number => number * 2);
+      
+      // Display the result
+      document.getElementById("result").textContent = doubledNumbers.join(', ');
+    }
+  </script>
+</body>
+</html>
