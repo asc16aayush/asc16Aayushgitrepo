@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>updated static Data Capture</title>
+    <title>Updated further Static Data Capture</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
+        /* Your existing CSS styles */
         body {
             background-color: #f8f9fa;
             font-family: Arial, sans-serif;
@@ -228,7 +229,7 @@
                             <th>Address</th>
                             <th>Gender</th>
                             <th>Meal</th>
-                            <th>Feedback</th> <!-- Added feedback column -->
+                            <th>Feedback</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -244,106 +245,98 @@
             document.getElementById('feedbackValue').textContent = this.value;
         });
 
+        // Populate form data into the table dynamically as you type
+        function updateTable() {
+            // Get form values
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            const address = document.getElementById('address').value;
+            const gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '';
+            const meal = document.querySelector('input[name="meal"]:checked') ? document.querySelector('input[name="meal"]:checked').value : '';
+            const feedback = document.getElementById('feedback').value;
+
+            // Get beverage preferences
+            const beverages = [];
+            if (document.getElementById('tea').checked) beverages.push('Tea');
+            if (document.getElementById('coffee').checked) beverages.push('Coffee');
+            const beverage = beverages.join(', ');
+
+            // Clear existing rows
+            const tableBody = document.querySelector('#dataTable tbody');
+            tableBody.innerHTML = '';
+
+            // Add data to the table
+            const newRow = tableBody.insertRow();
+            newRow.insertCell(0).textContent = name;
+            newRow.insertCell(1).textContent = password;
+            newRow.insertCell(2).textContent = beverage;
+            newRow.insertCell(3).textContent = address;
+            newRow.insertCell(4).textContent = gender;
+            newRow.insertCell(5).textContent = meal;
+            newRow.insertCell(6).textContent = feedback;
+        }
+
+        // Listen for input changes to update the table in real-time
+        document.getElementById('name').addEventListener('input', updateTable);
+        document.getElementById('password').addEventListener('input', updateTable);
+        document.getElementById('address').addEventListener('input', updateTable);
+        document.querySelectorAll('input[name="gender"]').forEach(element => element.addEventListener('change', updateTable));
+        document.querySelectorAll('input[name="meal"]').forEach(element => element.addEventListener('change', updateTable));
+        document.getElementById('feedback').addEventListener('input', updateTable);
+        document.getElementById('tea').addEventListener('change', updateTable);
+        document.getElementById('coffee').addEventListener('change', updateTable);
+
+        // Function to save form data to local storage
         function storeData(event) {
-    event.preventDefault(); // Prevents form submission from reloading the page
+            event.preventDefault(); // Prevents form submission from reloading the page
 
-    // Get form values
-    const name = document.getElementById('name').value;
-    const password = document.getElementById('password').value;
-    const address = document.getElementById('address').value;
-    const gender = document.querySelector('input[name="gender"]:checked').value;
-    const meal = document.querySelector('input[name="meal"]:checked').value;
-    const feedback = document.getElementById('feedback').value; // Get feedback value
+            // Get form data as an object
+            const formData = {
+                name: document.getElementById('name').value,
+                password: document.getElementById('password').value,
+                beverage: document.getElementById('tea').checked ? 'Tea' : document.getElementById('coffee').checked ? 'Coffee' : '',
+                address: document.getElementById('address').value,
+                gender: document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '',
+                meal: document.querySelector('input[name="meal"]:checked') ? document.querySelector('input[name="meal"]:checked').value : '',
+                feedback: document.getElementById('feedback').value
+            };
 
-    // Get beverage preferences
-    const beverages = [];
-    if (document.getElementById('tea').checked) beverages.push('Tea');
-    if (document.getElementById('coffee').checked) beverages.push('Coffee');
-    const beverage = beverages.join(', ');
+            // Store in local storage
+            localStorage.setItem('formData', JSON.stringify(formData));
+            alert("Data saved successfully!");
 
-    // Store form data in an object
-    const formData = {
-        name: name,
-        password: password,
-        beverage: beverage,
-        address: address,
-        gender: gender,
-        meal: meal,
-        feedback: feedback
-    };
-
-    // Store the form data object in local storage
-    let dataArray = JSON.parse(localStorage.getItem("formDataArray")) || [];
-    dataArray.push(formData);
-    localStorage.setItem("formDataArray", JSON.stringify(dataArray));
-
-    // Add data to the table
-    const tableBody = document.querySelector('#dataTable tbody');
-    const newRow = tableBody.insertRow();
-    newRow.insertCell(0).textContent = name;
-    newRow.insertCell(1).textContent = password;
-    newRow.insertCell(2).textContent = beverage;
-    newRow.insertCell(3).textContent = address;
-    newRow.insertCell(4).textContent = gender;
-    newRow.insertCell(5).textContent = meal;
-    newRow.insertCell(6).textContent = feedback; // Add feedback to the table
-
-    alert("Data submitted successfully!");
-
-    // Reset the form after submission
-    document.querySelector('form').reset();
-    document.getElementById('feedbackValue').textContent = '5'; // Reset feedback value
-}
-
-//populate
-
-function populateTable() {
-    const tableBody = document.querySelector('#dataTable tbody');
-    const dataArray = JSON.parse(localStorage.getItem("formDataArray")) || [];
-
-    dataArray.forEach(data => {
-        const newRow = tableBody.insertRow();
-        newRow.insertCell(0).textContent = data.name;
-        newRow.insertCell(1).textContent = data.password;
-        newRow.insertCell(2).textContent = data.beverage;
-        newRow.insertCell(3).textContent = data.address;
-        newRow.insertCell(4).textContent = data.gender;
-        newRow.insertCell(5).textContent = data.meal;
-        newRow.insertCell(6).textContent = data.feedback;
-    });
-}
-
-// Call populateTable when the page loads
-window.onload = populateTable;
-
-
-
-
-
-        function video1() {
-            const videocontainer = document.getElementById('videocontainer');
-            videocontainer.innerHTML = '<iframe width="100%" height="315" src="https://www.youtube.com/embed/qhReqB3eLx0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            // Reset the form after submission
+            document.querySelector('form').reset();
+            document.getElementById('feedbackValue').textContent = '5';
+            // Update the table with the new data
+            updateTable();
         }
 
-        function video2() {
-            const videocontainer = document.getElementById('videocontainer');
-            videocontainer.innerHTML = '<iframe width="100%" height="315" src="https://www.youtube.com/embed/fzWzPXEhPvA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        // Function to load stored data and update the table if data is available
+        function loadData() {
+            const storedData = JSON.parse(localStorage.getItem('formData'));
+            if (storedData) {
+                // Optionally display saved data in the table here
+                const tableBody = document.querySelector('#dataTable tbody');
+                tableBody.innerHTML = '';
+
+                const newRow = tableBody.insertRow();
+                newRow.insertCell(0).textContent = storedData.name;
+                newRow.insertCell(1).textContent = storedData.password;
+                newRow.insertCell(2).textContent = storedData.beverage;
+                newRow.insertCell(3).textContent = storedData.address;
+                newRow.insertCell(4).textContent = storedData.gender;
+                newRow.insertCell(5).textContent = storedData.meal;
+                newRow.insertCell(6).textContent = storedData.feedback;
+            }
         }
 
-        function video3() {
-            const videocontainer = document.getElementById('videocontainer');
-            videocontainer.innerHTML = '<iframe width="100%" height="315" src="https://www.youtube.com/embed/3ao7Z8duDXc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-        }
+        // Call loadData on page load but don't populate the table
+        window.onload = function () {
+            loadData(); // Load data but do not display in table
+            document.querySelector('#dataTable tbody').innerHTML = ''; // Ensure the table is empty
+        };
     </script>
-<br><br><br>
-
-<div style="background-color: #d1ecf1;">
-    <h1>audio and video</h1>
-    <audio src="audio1.mp3" controls  muted></audio>
-
-    <video src="video1.mp4" controls  muted  width="300"></video>
-    <iframe src="https://www.youtube.com/embed/RzNdxv3VGoQ" allowfullscreen width="400" height="350"></iframe>
-</div>
 </body>
 
 </html>
