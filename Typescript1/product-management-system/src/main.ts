@@ -60,10 +60,6 @@ products = productManager.listProducts();
 console.log(products);
 
 
-console.log("product updateded");
-productManager.updateProduct(2, { price: 950, rating: 6.7 });
-products = productManager.listProducts();
-console.log(products);
 
 
 

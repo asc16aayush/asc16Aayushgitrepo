@@ -24,15 +24,7 @@ export class ProductManager {
 
     }
 
-    updateProduct(id: number, updatedProduct: Partial<Product>): void {
-        const productIndex = this.products.findIndex(product => product.id === id);
-        if (productIndex !== -1) {
-            this.products[productIndex] = { ...this.products[productIndex], ...updatedProduct };
-            console.log(`Product with id ${id} updated successfully`);
-        } else {
-            console.log(`Product with id ${id} not found`);
-        }
-    }
+    
 
     filterProductsByCategory(category: string): Product[] {
         return this.products.filter(product => product.category === category);
