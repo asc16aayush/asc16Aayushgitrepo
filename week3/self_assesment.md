@@ -49,14 +49,13 @@
 1. Error Handling: Add error-handling mechanisms for asynchronous calls to improve user experience during network issues.
 2. Modularity: Break down large components into smaller, reusable ones for easier maintenance and scalability.
 3. CSS Styling: Further enhance the visual appearance of the application by applying more refined and responsive CSS styling.
-4. Unit Testing: Increase code coverage by adding unit tests to validate component behavior and ensure reliability.
+
 
 ---
 
 ## Strengths
 
 - Clear Separation of Concerns: Separate service for data retrieval ensures modularity and simplifies component responsibilities.
-- Efficient Data Binding: Two-way data binding ensures a responsive UI that updates automatically with any changes in data.
 - Modular Design: The use of standalone components allows for a scalable and maintainable code structure.
 
 ---
