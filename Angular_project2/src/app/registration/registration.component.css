@@ -1,0 +1,129 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    padding: 30px;
+}
+
+h1,
+h2 {
+    color: #5a5a5a;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    transition: all 0.3s ease;
+    background-color: #e7f3ff;
+    /* Light blue background for inputs */
+    border: 1px solid #007bff;
+    /* Blue border */
+}
+
+.form-control:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+.form-label {
+    color: #007bff;
+    /* Blue color for labels */
+    font-weight: bold;
+    /* Bold labels */
+}
+
+.beverage-section {
+    background-color: #d1ecf1;
+    /* Light cyan background for beverage preferences */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.address-section {
+    background-color: #d4edda;
+    /* Light green background for address section */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.gender-section,
+.meal-section {
+    background-color: #fff3cd;
+    /* Light yellow background for gender and meal preference sections */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.feedback-section {
+    background-color: #e2e3e5;
+    /* Light gray background for feedback section */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn {
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    /* Rounded buttons */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    transform: scale(1.05);
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+    transition: background-color 0.3s ease;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+#videocontainer iframe {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional styling for checkbox and radio buttons */
+.form-check-label {
+    color: #5a5a5a;
+    margin-right: 10px;
+}
+
+/* Highlight for selected meal and gender preferences */
+.form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Styling for range input */
+.range-label {
+    font-weight: bold;
+    color: #5a5a5a;
+}

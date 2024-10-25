@@ -1,0 +1,108 @@
+<div class="container" style="background:linear-gradient(rgb(114, 119, 117),rgb(239, 242, 243));">
+    <h1 class="text-center" style="font-style: italic;">Welcome to the Form</h1>
+    <div class="row">
+        <!-- Form Section -->
+        <div class="col-md-6">
+            <form onsubmit="storeData(event)" class="p-4"
+                style="background:linear-gradient(rgb(234, 202, 226),rgb(220, 220, 228));">
+                <!-- Form Fields -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Enter your name:</label>
+                    <input type="text" id="name" required class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Enter your password:</label>
+                    <input type="password" id="password" required class="form-control" />
+                </div>
+
+                <div class="mb-3 beverage-section">
+                    <p>Beverage Preference:</p>
+                    <div>
+                        <input type="checkbox" id="tea" value="Tea"> <label for="tea"
+                            class="form-check-label">Tea</label>
+                        <input type="checkbox" id="coffee" value="Coffee"> <label for="coffee"
+                            class="form-check-label">Coffee</label>
+                    </div>
+                </div>
+
+                <div class="mb-3 address-section">
+                    <label for="address" class="form-label">Address:</label>
+                    <textarea id="address" cols="20" rows="4" class="form-control"></textarea>
+                </div>
+
+                <div class="mb-3 gender-section">
+                    <p>Gender:</p>
+                    <div>
+                        <input type="radio" name="gender" value="Male" required id="male"> <label for="male"
+                            class="form-check-label">Male</label>
+                        <input type="radio" name="gender" value="Female" id="female"> <label for="female"
+                            class="form-check-label">Female</label>
+                    </div>
+                </div>
+
+                <div class="mb-3 meal-section">
+                    <p>Meal Preference:</p>
+                    <div>
+                        <input type="radio" name="meal" value="Veg" required id="veg"> <label for="veg"
+                            class="form-check-label">Veg</label>
+                        <input type="radio" name="meal" value="Non-Veg" id="non-veg"> <label for="non-veg"
+                            class="form-check-label">Non-Veg</label>
+                    </div>
+                </div>
+
+                <!-- Feedback Section -->
+                
+                <div class="mb-3 feedback-section">
+                    <label class="range-label">Feedback Rating (0 to 10):</label>
+                    <input type="range" min="0" max="10" value="5" class="form-range" id="feedback">
+                    <span id="feedbackValue">5</span>
+                </div>
+
+                <!-- Submit and Reset buttons -->
+                <button type="submit" class="btn btn-primary">Register Now</button>
+                <button type="reset" class="btn btn-secondary">Reset Now</button>
+
+                <!-- Video Buttons -->
+                <div class="mt-3">
+                    <p>New videos:</p>
+                    
+                    <button type="button" id="comedy" onclick="video1()" class="btn btn-info">Comedy</button>
+                    <button type="button" id="technical" onclick="video2()" class="btn btn-info">Technical</button>
+                    <button type="button" id="chatgpt" onclick="video3()" class="btn btn-info">ChatGPT</button>
+                </div>
+
+                <div id="videocontainer" class="mt-3"></div>
+                
+            </form>
+        </div>
+
+        <!-- Data Table Section -->
+
+        
+        <div class="col-md-6">
+            <h2>Submitted Data</h2>
+            <table id="dataTable" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Password</th>
+                        <th>Beverage</th>
+                        <th>Address</th>
+                        <th>Gender</th>
+                        <th>Meal</th>
+                        <th>Feedback</th> 
+                        <!-- Added feedback column -->
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div> 
+        </div>
+</div>
+<div style="background-color: #d1ecf1;">
+    <h1>audio and video</h1>
+    <audio src="../../assets/audio1.mp3" controls  muted></audio>
+
+    <video src="../../assets/video1.mp4" controls  muted  width="300"></video>
+    <iframe src="https://www.youtube.com/embed/RzNdxv3VGoQ" allowfullscreen width="400" height="350"></iframe>
+</div>
