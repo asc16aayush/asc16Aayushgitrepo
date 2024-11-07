@@ -5,10 +5,9 @@ import { RegistrationComponent } from './registration/registration.component';
 
 
 
-
-
 @Component({
-  selector: 'app-root',
+  // selector: 'app-root',
+  selector: 'app-main',
   standalone: true,
   imports: [RouterOutlet,RegistrationComponent],
   templateUrl: './app.component.html',
