@@ -3,22 +3,17 @@
     {
       "id": "1",
       "name": "Aayush",
-      "salary": "90000000"
-    },
-    {
-      "id": "2",
-      "name": "Jalaj",
-      "salary": 500000
-    },
-    {
-      "id": "3",
-      "name": "Mishra",
-      "salary": "70000"
+      "salary": 99000000
     },
     {
       "id": "5",
       "name": "Nitish",
       "salary": 700000
+    },
+    {
+      "id": "7",
+      "name": "Sagar",
+      "salary": "7700000"
     }
   ]
 }

@@ -1,23 +1,26 @@
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
-// import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule } from "@angular/platform-browser";
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from "./login/login.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
 import { ListEmpComponent } from "./list-emp/list-emp.component";
 import { UpdateEmpComponent } from "./update-emp/update-emp.component";
-
-
-
-
+import { RegisterComponent } from "./register/register.component";
+ 
 @NgModule({
-    declarations: [AppComponent, LoginComponent,ListEmpComponent, UpdateEmpComponent],
-    imports: [BrowserModule,AppRoutingModule,ReactiveFormsModule,HttpClientModule , FormsModule],
-    bootstrap:[AppComponent]
     
+    declarations: [AppComponent,LoginComponent,ListEmpComponent,UpdateEmpComponent,RegisterComponent],
+    imports: [BrowserModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule,
+        AppRoutingModule,
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule{
-
+export class AppModule {
+ 
 }
+
