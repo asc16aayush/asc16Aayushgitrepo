@@ -27,4 +27,8 @@ export class IssueListComponent implements OnInit {
       this.issues = this.issues.filter((issue) => issue.id !== id);
     });
   }
+
+  // updateIssue(id: number): void {
+  //   this.router.navigate([`/issue/update/${id}`]);
+  // }
 }

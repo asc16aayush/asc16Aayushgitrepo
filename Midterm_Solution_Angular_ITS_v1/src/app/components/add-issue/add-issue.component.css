@@ -1,0 +1,91 @@
+/* Container for the Add New Issue form */
+.add-issue {
+    background-color: #ffffff; /* White background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  /* Header styling */
+  .add-issue h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Label Styling */
+  label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    margin-top: 12px;
+  }
+  
+  /* Input and Textarea Styling */
+  input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    outline: none;
+  }
+  
+  textarea {
+    resize: vertical; /* Allow vertical resizing */
+    height: 120px; /* Set a fixed height */
+  }
+  
+  /* Button Styling */
+  button {
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+  }
+  
+  button:focus {
+    outline: none; /* Remove default outline on focus */
+  }
+  
+  button:active {
+    transform: translateY(0); /* Reset lift effect on button press */
+  }
+  
+  /* Optional spacing adjustments */
+  .add-issue form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .add-issue input,
+  .add-issue textarea,
+  .add-issue select {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  

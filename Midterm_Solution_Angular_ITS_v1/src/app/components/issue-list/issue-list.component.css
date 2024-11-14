@@ -1,0 +1,103 @@
+/* Container for the issue list */
+.issue-list {
+    background-color: #ffffff; /* White background for the list */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  /* Header of the issue list */
+  .issue-list h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /* Table Header */
+  th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  /* Table Data */
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #f4f4f4;
+    color: #555;
+  }
+  
+  /* Row Hover Effect */
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Button Styling */
+  button {
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+  }
+  
+  button:focus {
+    outline: none; /* Remove the default outline on focus */
+  }
+  
+  button:active {
+    transform: translateY(0); /* Reset lift effect on button press */
+  }
+  
+  /* Button for delete (Red) */
+  button:nth-child(2) {
+    background-color: #e74c3c; /* Red for delete */
+  }
+  
+  button:nth-child(2):hover {
+    background-color: #c0392b; /* Darker red on hover */
+  }
+  
+  /* Button for update (Orange) */
+  button:nth-child(3) {
+    background-color: #f39c12; /* Orange for update */
+  }
+  
+  button:nth-child(3):hover {
+    background-color: #e67e22; /* Darker orange on hover */
+  }
+  
+  /* Adjusting button size and spacing */
+  button {
+    font-size: 10px;
+    padding: 8px 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  
