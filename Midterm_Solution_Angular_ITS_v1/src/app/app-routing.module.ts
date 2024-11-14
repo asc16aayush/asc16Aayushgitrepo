@@ -6,13 +6,14 @@ import { IssueListComponent } from './components/issue-list/issue-list.component
 import { AddIssueComponent } from './components/add-issue/add-issue.component';
 import { IssueDetailsComponent } from './components/issue-details/issue-details.component';
 import { AppComponent } from './app.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'issues', component: IssueListComponent },
-  { path: 'add-issue', component: AddIssueComponent },
-  { path: 'issue/:id', component: IssueDetailsComponent }
+  { path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuard] },
+  { path: 'issues', component: IssueListComponent, canActivate: [AuthGuard] },
+  { path: 'add-issue', component: AddIssueComponent, canActivate: [AuthGuard] },
+  { path: 'issue/:id', component: IssueDetailsComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
