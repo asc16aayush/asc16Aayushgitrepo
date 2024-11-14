@@ -9,10 +9,12 @@ import { RegisterComponent } from "./register/register.component";
  
 const routes: Routes = [
     { path:'login', component: LoginComponent},
-    {path:'employees', component: ListEmpComponent, canActivate: [AuthGuardService]},
+    // {path:'employees', component: ListEmpComponent, canActivate: [AuthGuardService]},
+    {path:'employees', component: ListEmpComponent},
     { path: 'update/:id', component: UpdateEmpComponent},
     { path: 'register', component: RegisterComponent},
-    { path: '**', component: LoginComponent }
+    { path: '', component: LoginComponent }
+    
 ]
  
 @NgModule({

@@ -42,6 +42,11 @@ export class ListEmpComponent implements OnInit {
       console.log("EmpIDUndefined");
     }
   }
+
+  logOut(){
+    sessionStorage.setItem("loginid","no");
+    this.router.navigate(['/login']);
+  }
  
  
   searchEmployee() {

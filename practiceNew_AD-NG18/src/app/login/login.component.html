@@ -1,18 +1,39 @@
+<div class="container" style="border-radius: 15px; background-color: #f8f9fa; padding: 30px; max-width: 400px; margin: auto; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+  <h2 class="text-center mb-4" style="color: #333;">Login</h2>
+  
+  <form [formGroup]="loginForm">
+    <div class="mb-3">
+      <label for="loginid" class="form-label">Login ID:</label>
+      <input type="text" id="loginid" formControlName="loginid" class="form-control" placeholder="Enter Login ID" />
+    </div>
+    
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter Password" />
+    </div>
 
-<div class="container" style="border-radius: 15px;"><br>
-    <form [formGroup]= "loginForm" >
-         <label >Login Id:</label> 
-        <input type="text" formControlname="loginid" class="form-control">
-        <br>
-        <label >Password:</label>  
-        <input type="password" formControlName="password" class="form-control">
-        <br><br>
-        <button (click)="onSubmit()" class="btn btn-primary" onMouseOver="this.style.color='red'" 
-        onMouseOut="this.style.color='black'">Login</button>
-</form>
-<br>
+    <!-- Display Alert for Remaining Attempts -->
+    <div *ngIf="remainingAttempts > 0" class="alert alert-warning">
+      Incorrect password! You have {{ remainingAttempts }} attempts remaining.
+    </div>
+
+    <!-- Display Cooldown Message -->
+    <div *ngIf="isLoginDisabled" class="alert alert-warning">
+      You have exceeded the maximum login attempts. Please wait {{ countdown }} seconds.
+    </div>
+
+    <button 
+      type="button" 
+      class="btn btn-primary btn-block" 
+      (click)="onSubmit()" 
+      [disabled]="isLoginDisabled"
+      onMouseOver="this.style.color='red'" 
+      onMouseOut="this.style.color='black'">
+      Login
+    </button>
+  </form>
 </div>
 
-<footer>
-  <h1 >Thank You</h1>
+<footer class="text-center mt-5">
+  <h1>Thank You</h1>
 </footer>

@@ -1,0 +1,11 @@
+
+<div *ngIf="issue">
+  <h2>Issue Details</h2>
+  <p><strong>Title:</strong> {{ issue.title }}</p>
+  <p><strong>Description:</strong> {{ issue.description }}</p>
+  <p><strong>Priority:</strong> {{ issue.priority }}</p>
+  <p><strong>Status:</strong> {{ issue.status }}</p>
+  <p><strong>Assignee:</strong> {{ issue.assignee }}</p>
+
+  <button (click)="goBack()">Back to Dashboard</button>
+</div>
