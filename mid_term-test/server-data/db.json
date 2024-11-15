@@ -1,0 +1,29 @@
+{
+  "issues": [
+    {
+      "id": "0",
+      "title": "jalaj",
+      "description": "jha",
+      "priority": "High",
+      "status": "In Progress",
+      "assignee": "aa",
+      "lastUpdated": "2024-11-15T09:59:13.615Z"
+    },
+    {
+      "id": "0",
+      "title": "harsh",
+      "description": "mishra",
+      "priority": "Medium",
+      "status": "Open",
+      "assignee": "aayush",
+      "lastUpdated": "2024-11-15T09:51:24.304Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin"
+    }
+  ]
+}

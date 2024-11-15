@@ -1,0 +1,86 @@
+/* General container styles */
+.login-container {
+    width: 100%;
+    max-width: 400px; /* Set a maximum width for the form */
+    margin: 0 auto; /* Center the form on the screen */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Heading styling */
+  h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #4CAF50;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Input and label styling */
+  label {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  /* Input fields */
+  input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; /* Makes sure padding and borders are included in the total width */
+  }
+  
+  input:focus {
+    border-color: #4CAF50; /* Highlight input fields with green border on focus */
+    outline: none;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 12px;
+    font-size: 1.1em;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Error message styling */
+  .error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .login-container {
+      padding: 15px;
+      width: 90%; /* Make the form take up more width on smaller screens */
+    }
+  }
+  

@@ -1,0 +1,134 @@
+/* General container styles */
+.issue-details-container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  /* Header */
+  h2 {
+    color: #4CAF50;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Loading state */
+  p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  /* Form Container */
+  form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  div {
+    margin-bottom: 15px;
+  }
+  
+  /* Labels */
+  label {
+    display: block;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  /* Input Fields */
+  input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  /* Disabled input fields */
+  input[disabled], textarea[disabled] {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+  }
+  
+  /* Buttons */
+  button {
+    width: 48%;
+    padding: 12px;
+    font-size: 1.1em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 4%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+  }
+  
+  button[type="button"] {
+    background-color: #f44336;
+    margin-left: 4%;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Error message */
+  .error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Button container (for submit and cancel) */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .issue-details-container {
+      width: 95%;
+    }
+  
+    button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .button-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    button[type="button"] {
+      margin-left: 0;
+    }
+  
+    button[type="submit"] {
+      margin-right: 0;
+    }
+  }
+  

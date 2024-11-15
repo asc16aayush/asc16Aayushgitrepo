@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Update Issue</h2>
+  
+    <!-- Error message display -->
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Update Status Form -->
+    <div *ngIf="issue">
+      <form (ngSubmit)="updateStatus()">
+        <div>
+          <label for="status">Status:</label>
+          <select id="status" [(ngModel)]="issue.status" name="status" required>
+            <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+          </select>
+        </div>
+  
+        <button type="submit">Update Status</button>
+      </form>
+    </div>
+  </div>
+  
