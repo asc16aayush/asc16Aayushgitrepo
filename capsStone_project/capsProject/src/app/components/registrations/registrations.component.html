@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <h2>Manage Registrations</h2>
+  <form (ngSubmit)="addRegistration(regForm.value)" #regForm="ngForm">
+    <div class="form-group">
+      <label for="courseId">Course ID:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="courseId"
+        ngModel
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="learnerId">Learner ID:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="learnerId"
+        ngModel
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-success mt-3">Add Registration</button>
+  </form>
+
+  <h3 class="mt-5">Registrations List</h3>
+  <ul class="list-group">
+    <li *ngFor="let registration of registrations" class="list-group-item">
+      {{ registration.id }} - Course: {{ registration.courseId }} - Learner: {{ registration.learnerId }}
+      <button
+        class="btn btn-danger btn-sm float-end"
+        (click)="deleteRegistration(registration.id)"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>

@@ -31,3 +31,6 @@ export class IssuesService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
+
+
+

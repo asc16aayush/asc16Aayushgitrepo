@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h2>Manage Learners</h2>
+  <form (ngSubmit)="addLearner(learnerForm.value)" #learnerForm="ngForm">
+    <div class="form-group">
+      <label for="learnerName">Learner Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="learnerName"
+        ngModel
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-success mt-3">Add Learner</button>
+  </form>
+
+  <h3 class="mt-5">Learners List</h3>
+  <ul class="list-group">
+    <li *ngFor="let learner of learners" class="list-group-item">
+      {{ learner.id }} - {{ learner.name }}
+      <button
+        class="btn btn-danger btn-sm float-end"
+        (click)="deleteLearner(learner.id)"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>

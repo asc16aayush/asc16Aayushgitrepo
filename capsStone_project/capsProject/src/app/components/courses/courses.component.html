@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h2>Manage Courses</h2>
+  <form (ngSubmit)="addCourse(courseForm.value)" #courseForm="ngForm">
+    <div class="form-group">
+      <label for="courseName">Course Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="courseName"
+        ngModel
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-success mt-3">Add Course</button>
+  </form>
+
+  <h3 class="mt-5">Courses List</h3>
+  <ul class="list-group">
+    <li *ngFor="let course of courses" class="list-group-item">
+      {{ course.id }} - {{ course.name }}
+      <button
+        class="btn btn-danger btn-sm float-end"
+        (click)="deleteCourse(course.id)"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>
