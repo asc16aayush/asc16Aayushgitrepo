@@ -1,7 +1,8 @@
-<!-- src/app/components/courses/courses.component.html -->
+<!-- 
 
 <div class="container">
   <h1>Courses</h1>
+
 
   <div *ngIf="isEditing || !selectedCourse.courseId">
     <h2>{{ isEditing ? 'Edit Course' : 'Add Course' }}</h2>
@@ -12,29 +13,28 @@
       </div>
       <div>
         <label for="startDate">Start Date:</label>
-        <input id="startDate" [(ngModel)]="selectedCourse.startDate" name="startDate" required />
+        <input id="startDate" type="date" [(ngModel)]="selectedCourse.startDate" name="startDate" required />
       </div>
       <div>
-        <label for="duration">Duration:</label>
-        <input id="duration" [(ngModel)]="selectedCourse.duration" name="duration" required />
+        <label for="duration">Duration (in days):</label>
+        <input id="duration" type="number" [(ngModel)]="selectedCourse.duration" name="duration" required min="1" />
       </div>
       <div>
         <label for="description">Description:</label>
-        <input id="description" [(ngModel)]="selectedCourse.description" name="description" required />
+        <textarea id="description" [(ngModel)]="selectedCourse.description" name="description" required></textarea>
       </div>
       <div>
         <label for="assignedTo">Assigned To:</label>
-        <input id="assignedTo" [(ngModel)]="selectedCourse.assignedTo" name="assignedTo" required />
+        <select id="assignedTo" [(ngModel)]="selectedCourse.assignedTo" name="assignedTo" required>
+          <option *ngFor="let author of authors" [value]="author.authorId">{{ author.authorId }}</option>
+        </select>
       </div>
       <button type="submit">{{ isEditing ? 'Update' : 'Add' }} Course</button>
       <button type="button" (click)="resetForm()">Cancel</button>
     </form>
-  </div>
+  </div>-->
   
-
-
-
-
+<!-- 
 
   <div *ngIf="!isEditing">
     <h2>Course List</h2>
@@ -50,6 +50,11 @@
         </tr>
       </thead>
       <tbody>
+
+        <tr *ngIf="courses.length === 0">
+          <td colspan="6">No courses available</td>
+      </tr>
+
         <tr *ngFor="let course of courses">
           <td>{{ course.courseId }}</td>
           <td>{{ course.name }}</td>
@@ -63,7 +68,69 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> -->
+<!-- </div>  -->
+<div *ngIf="!isEditing">
+  <h2>Course List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Course ID</th>
+        <th>Name</th>
+        <th>Start Date</th>
+        <th>Duration</th>
+        <th>Description</th>
+        <th>Assigned_To</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="courses.length === 0">
+        <td colspan="6">No courses available</td>
+      </tr>
+      <tr *ngFor="let course of courses">
+        <td>{{ course.courseId }}</td>
+        <td>{{ course.name }}</td>
+        <td>{{ course.startDate }}</td>
+        <td>{{ course.duration }}</td>
+        <td>{{ course.description }}</td>
+        <td>{{ course.assignedTo.authorId }}</td>
+        <td>
+          <button (click)="editCourse(course)">Edit</button>
+          <button (click)="deleteCourse(course.courseId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-
+<div *ngIf="isEditing || !selectedCourse.courseId">
+  <h2>{{ isEditing ? 'Edit Course' : 'Add Course' }}</h2>
+  <form (ngSubmit)="saveCourse()">
+    <div>
+      <label for="name">Course Name:</label>
+      <input id="name" [(ngModel)]="selectedCourse.name" name="name" required />
+    </div>
+    <div>
+      <label for="startDate">Start Date:</label>
+      <input id="startDate" type="date" [(ngModel)]="selectedCourse.startDate" name="startDate" required />
+    </div>
+    <div>
+      <label for="duration">Duration (in days):</label>
+      <input id="duration" type="number" [(ngModel)]="selectedCourse.duration" name="duration" required min="1" />
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="selectedCourse.description" name="description" required></textarea>
+    </div>
+    <div>
+      <label for="assignedTo">Assigned To:</label>
+      <select id="assignedTo" [(ngModel)]="selectedCourse.assignedTo" name="assignedTo" required>
+        <option *ngFor="let author of authors" [ngValue]="author">{{ author.authorId }}</option>
+      </select>
+    </div>
+    
+    <button type="submit">{{ isEditing ? 'Update' : 'Add' }} Course</button>
+    <button type="button" (click)="resetForm()">Cancel</button>
+  </form>
+</div>

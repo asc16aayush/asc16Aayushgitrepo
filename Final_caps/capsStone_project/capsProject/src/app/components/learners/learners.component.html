@@ -1,29 +1,120 @@
-<div class="container mt-5">
-  <h2>Manage Learners</h2>
-  <form (ngSubmit)="addLearner(learnerForm.value)" #learnerForm="ngForm">
+<!-- <div class="container">
+  <h1>Learner Management</h1>
+
+  
+  <form (ngSubmit)="saveLearner()" #learnerForm="ngForm">
+   
     <div class="form-group">
-      <label for="learnerName">Learner Name:</label>
-      <input
-        type="text"
-        class="form-control"
-        name="learnerName"
-        ngModel
-        required
-      />
+      <label for="name">Name</label>
+      <input type="text" id="name" [(ngModel)]="learner.name" name="name" class="form-control" required />
     </div>
-    <button type="submit" class="btn btn-success mt-3">Add Learner</button>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" [(ngModel)]="learner.phone" name="phone" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="learner.email" name="email" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" id="address" [(ngModel)]="learner.address" name="address" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="courseAssigned">Course Assigned</label>
+      <input type="text" id="courseAssigned" [(ngModel)]="learner.courseAssigned" name="courseAssigned" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ isUpdateMode ? 'Update' : 'Add' }} Learner</button>
   </form>
 
-  <h3 class="mt-5">Learners List</h3>
-  <ul class="list-group">
-    <li *ngFor="let learner of learners" class="list-group-item">
-      {{ learner.id }} - {{ learner.name }}
-      <button
-        class="btn btn-danger btn-sm float-end"
-        (click)="deleteLearner(learner.id)"
-      >
-        Delete
-      </button>
-    </li>
-  </ul>
+  
+  <h2>All Learners</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Course</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let learner of learners">
+        <td>{{ learner.learnerId }}</td>
+        <td>{{ learner.name }}</td>
+        <td>{{ learner.phone }}</td>
+        <td>{{ learner.email }}</td>
+        <td>{{ learner.address }}</td>
+        <td>{{ learner.courseAssigned }}</td>
+        <td>
+          <button class="btn btn-info" (click)="editLearner(learner.learnerId)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteLearner(learner.learnerId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<div class="container">
+  <h1 class="text-center">Learner Management</h1>
+
+  <!-- Form to create or update a learner -->
+  <form (ngSubmit)="saveLearner()" #learnerForm="ngForm" class="form-container">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" [(ngModel)]="learner.name" name="name" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" [(ngModel)]="learner.phone" name="phone" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="learner.email" name="email" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" id="address" [(ngModel)]="learner.address" name="address" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="courseAssigned">Course Assigned</label>
+      <input type="text" id="courseAssigned" [(ngModel)]="learner.courseAssigned.courseId" name="courseAssigned" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-submit">{{ isUpdateMode ? 'Update' : 'Add' }} Learner</button>
+  </form>
+
+  <!-- Display all learners -->
+  <h2 class="text-center">All Learners</h2>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Course</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let learner of learners" class="table-row">
+        <td>{{ learner.learnerId }}</td>
+        <td>{{ learner.name }}</td>
+        <td>{{ learner.phone }}</td>
+        <td>{{ learner.email }}</td>
+        <td>{{ learner.address }}</td>
+        <td>{{ learner.courseAssigned.courseId }}</td>
+        <td>
+          <button class="btn btn-info" (click)="editLearner(learner.learnerId)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteLearner(learner.learnerId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+

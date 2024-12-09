@@ -1,61 +1,55 @@
-<div class="container mt-5">
-  <h2>Manage Reviews</h2>
-  <form (ngSubmit)="addReview(reviewForm.value)" #reviewForm="ngForm">
+
+
+<!-- Review Form for adding/editing a review -->
+<div class="review-form-container">
+  <h2>{{ isEditMode ? 'Edit Review' : 'Add New Review' }}</h2>
+  <form (ngSubmit)="isEditMode ? updateReview() : submitReview()" class="review-form">
     <div class="form-group">
-      <label for="reviewText">Review Text:</label>
-      <textarea
-        class="form-control"
-        name="reviewText"
-        ngModel
-        required
-      ></textarea>
+      <label for="review">Review:</label>
+      <input [(ngModel)]="reviewData.review" name="review" class="form-control" required />
     </div>
     <div class="form-group">
-      <label for="courseId">Course ID:</label>
-      <input
-        type="text"
-        class="form-control"
-        name="courseId"
-        ngModel
-        required
-      />
+      <label for="rating">Rating:</label>
+      <input [(ngModel)]="reviewData.rating" type="number" name="rating" class="form-control" min="1" max="5" required />
     </div>
     <div class="form-group">
       <label for="learnerId">Learner ID:</label>
-      <input
-        type="text"
-        class="form-control"
-        name="learnerId"
-        ngModel
-        required
-      />
+      <input [(ngModel)]="reviewData.learner.learnerId" name="learnerId" class="form-control" required />
     </div>
     <div class="form-group">
-      <label for="rating">Rating (1-5):</label>
-      <input
-        type="number"
-        class="form-control"
-        name="rating"
-        ngModel
-        min="1"
-        max="5"
-        required
-      />
+      <label for="courseId">Course ID:</label>
+      <input [(ngModel)]="reviewData.course.courseId" name="courseId" class="form-control" required />
     </div>
-    <button type="submit" class="btn btn-success mt-3">Add Review</button>
+    <div class="form-buttons">
+      <button type="submit" class="btn btn-success">{{ isEditMode ? 'Update Review' : 'Submit Review' }}</button>
+      <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+    </div>
   </form>
-
-  <h3 class="mt-5">Reviews List</h3>
-  <ul class="list-group">
-    <li *ngFor="let review of reviews" class="list-group-item">
-      {{ review.id }} - Course: {{ review.courseId }} - Learner: {{ review.learnerId }} - Rating: {{ review.rating }}
-      <p>{{ review.comment }}</p>
-      <button
-        class="btn btn-danger btn-sm float-end"
-        (click)="deleteReview(review.id)"
-      >
-        Delete
-      </button>
-    </li>
-  </ul>
 </div>
+
+<!-- Review List in Table Format -->
+<table class="reviews-table">
+  <thead>
+    <tr>
+      <th>Review ID</th>
+      <th>Review</th>
+      <th>Rating</th>
+      <th>Learner ID</th>
+      <th>Course ID</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let review of reviews">
+      <td>{{ review.rId }}</td>
+      <td>{{ review.review }}</td>
+      <td>{{ review.rating }}</td>
+      <td>{{ review.learner.learnerId }}</td>
+      <td>{{ review.course.courseId }}</td>
+      <td class="review-actions">
+        <button (click)="deleteReview(review.rId)" class="btn btn-danger" *ngIf="review.rId">Delete</button>
+        <button (click)="editReview(review)" class="btn btn-primary">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
