@@ -1,0 +1,150 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+}
+
+
+h1, h2 {
+  color: #4CAF50;
+}
+
+
+.form-container {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+
+.btn-submit {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #45a049;
+}
+
+.btn {
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+
+.table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-row:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.01);
+  transition: background-color 0.3s ease;
+}
+
+.table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.table td {
+  color: #555;
+}
+
+
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Back Button Styling */
+.back-button {
+  color: #ffffff; /* White text color */
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold text */
+  padding: 10px 15px; /* Padding for spacing */
+  text-decoration: none; /* Remove underline */
+  background-color: #007bff; /* Blue background color */
+  border-radius: 5px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for effects */
+}
+
+/* Back Button Hover Effect */
+.back-button:hover {
+  background-color: #0056b3; /* Darker blue when hovered */
+  color: #ffed00; /* Change text color to yellow on hover */
+}

@@ -1,0 +1,164 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+
+.dashboard-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.course-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* How This Course Helps Section */
+.how-helps, .key-features {
+  background-color: #e7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.how-helps h2, .key-features h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.how-helps ul, .key-features ul {
+  list-style-type: none;
+}
+
+.how-helps li, .key-features li {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.8;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: #f0f8ff;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.testimonial-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.testimonial-author {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+/* Navbar Styling */
+.navbar {
+  background-color: #333; /* Dark background */
+  padding: 10px 20px; /* Padding for spacing */
+}
+
+.navbar-title {
+  color: white;
+  font-size: 30px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center; /* Center the navbar items horizontally */
+  align-items: center;
+  width: 100%; /* Ensure the navbar items stretch across the entire width */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0 15px; /* Space between the navbar items */
+}
+
+.nav-link {
+  color: #f8f9fa !important;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav-link:hover {
+  color: #ffed00 !important; /* Yellow color on hover */
+  background-color: #555; /* Dark background on hover */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+}
+
+.navbar-brand:hover {
+  color: #ffed00 !important; /* Yellow color on hover */
+  background-color: #555; /* Dark background on hover */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Mobile/Tablet Responsive */
+@media (max-width: 768px) {
+  .navbar-title {
+    font-size: 24px;
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .nav-item {
+    margin: 10px 0; /* Space out navbar items when stacked */
+  }
+}
