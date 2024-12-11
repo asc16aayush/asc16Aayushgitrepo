@@ -1,0 +1,264 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Review Form Container */
+.review-form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Form Group Styles */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-size: 1em;
+  color: #555;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styles */
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Search Container with Bold Background Color, Proper Alignment & Reddish Text */
+.search-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto; /* Ensure it's centered within the container */
+  padding: 15px;
+  background-color: #89bab3; /* Bold dark background */
+  color: #fff; /* Text color contrasts with background */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(163, 184, 175, 0.1);
+  box-sizing: border-box;
+}
+
+/* Red Text for Search */
+.search-container label {
+  font-size: 1.7em;
+  color: #ff0000; /* Reddish color for text */
+  margin-bottom: 10px;
+}
+
+.search-container input {
+  width: 95%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Reviews Table Styles with Bold Background */
+.reviews-table-container {
+  background-color: #333; /* Bold dark background */
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 30px;
+  box-sizing: border-box;
+}
+
+.reviews-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.reviews-table th,
+.reviews-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.reviews-table th {
+  background-color: #444; /* Slightly lighter shade for the header */
+  color: #fff;
+}
+
+.reviews-table td {
+  background-color: #333; /* Bold background for table rows */
+  color: #fff;
+}
+
+.reviews-table tr:nth-child(even) {
+  background-color: #444; /* Alternating row background */
+}
+
+.reviews-table tr:hover {
+  background-color: #555; /* Bold hover effect */
+  cursor: pointer;
+}
+
+.reviews-table td .review-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.reviews-table button {
+  padding: 8px 16px;
+  font-size: 0.9em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background-color: #007bff; /* Bold blue button color */
+  color: #fff;
+  border: none;
+}
+
+.reviews-table button:hover {
+  transform: scale(1.05);
+  background-color: #0056b3; /* Darker shade of blue for hover */
+}
+
+.reviews-table button:focus {
+  outline: none;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .review-form-container {
+    padding: 20px;
+  }
+
+  .reviews-table-container {
+    margin-top: 20px;
+  }
+
+  .reviews-table th,
+  .reviews-table td {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  .reviews-table button {
+    font-size: 0.8em;
+    padding: 6px 12px;
+  }
+
+  .search-container input {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Back Button Styling */
+.back-button {
+  color: #ffffff; /* White text color */
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold text */
+  padding: 10px 15px; /* Padding for spacing */
+  text-decoration: none; /* Remove underline */
+  background-color: #007bff; /* Blue background color */
+  border-radius: 5px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for effects */
+}
+
+/* Back Button Hover Effect */
+.back-button:hover {
+  background-color: #0056b3; /* Darker blue when hovered */
+  color: #ffed00; /* Change text color to yellow on hover */
+}
