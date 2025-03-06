@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Redux</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.js"></script>
+    </head>
+    <body>
+        <button id="btn-decrement" onclick="store.dispatch(decrement())">
+            -
+        </button>
+        <span id="value"></span>
+        <button id="btn-increment" onclick="store.dispatch(increment())">
+            +
+        </button>
+
+        <script>
+            // action types
+            const INCREMENT = "counter/increment";
+            const DECREMENT = "counter/decrement";
+
+            // action creators are function that accept whatever has to go into an action, and put the action together and return it
+            // const fetchWorkshops = (page, category) => {
+            //     return {
+            //         type: FETCH,
+            //         payload: {
+            //             page: page,
+            //             category: category
+            //         }
+            //     }
+            // }
+
+            const increment = () => {
+                return {
+                    type: INCREMENT,
+                };
+            };
+
+            const decrement = () => {
+                return {
+                    type: DECREMENT,
+                };
+            };
+
+            // actions -> { type: INCREMENT }, { type: DECREMENT }
+
+            // define state to be shared among the app Ui elements
+            const initialState = {
+                value: 0,
+            };
+
+            // reducer to define the state changes
+            const counterReducer = (curState = initialState, action) => {
+                let newState;
+
+                switch (action.type) {
+                    case INCREMENT:
+                        newState = {
+                            ...curState,
+                            value: curState.value + 1,
+                        };
+                        break;
+                    case DECREMENT:
+                        newState = {
+                            ...curState,
+                            value: curState.value - 1,
+                        };
+                        break;
+                    default:
+                        newState = curState;
+                }
+
+                return newState;
+            };
+
+            // create the Redux store
+            const store = Redux.createStore(counterReducer);
+
+            console.log(store.getState()); // { value: 0 }
+
+            function render() {
+                document.getElementById("value").innerText =
+                    store.getState().value;
+            }
+
+            render();
+
+            // when the state changes, render is called by the store
+            store.subscribe(render);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+@workshopsAPI_HostAddress = http://localhost:5217
+
+GET {{workshopsAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\aayush.raj\\github_dotnet\\ASPNETCoreMVCsameerStudentPortal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{722489E7-907A-48D3-A087-66C76629E97D}|ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal.csproj|c:\\users\\aayush.raj\\github_dotnet\\aspnetcoremvcsameerstudentportal\\aspnetcoremvcsameerstudentportal\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{722489E7-907A-48D3-A087-66C76629E97D}|ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal.csproj|solutionrelative:aspnetcoremvcsameerstudentportal\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{722489E7-907A-48D3-A087-66C76629E97D}|ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal.csproj|c:\\users\\aayush.raj\\github_dotnet\\aspnetcoremvcsameerstudentportal\\aspnetcoremvcsameerstudentportal\\views\\students\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{722489E7-907A-48D3-A087-66C76629E97D}|ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal.csproj|solutionrelative:aspnetcoremvcsameerstudentportal\\views\\students\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{722489E7-907A-48D3-A087-66C76629E97D}|ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal.csproj|c:\\users\\aayush.raj\\github_dotnet\\aspnetcoremvcsameerstudentportal\\aspnetcoremvcsameerstudentportal\\models\\addstudentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{722489E7-907A-48D3-A087-66C76629E97D}|ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal.csproj|solutionrelative:aspnetcoremvcsameerstudentportal\\models\\addstudentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddStudentViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\aayush.raj\\github_dotnet\\ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal\\Models\\AddStudentViewModel.cs",
+              "RelativeDocumentMoniker": "ASPNETCoreMVCsameerStudentPortal\\Models\\AddStudentViewModel.cs",
+              "ToolTip": "C:\\Users\\aayush.raj\\github_dotnet\\ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal\\Models\\AddStudentViewModel.cs",
+              "RelativeToolTip": "ASPNETCoreMVCsameerStudentPortal\\Models\\AddStudentViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T20:31:40.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "C:\\Users\\aayush.raj\\github_dotnet\\ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal\\Views\\Students\\Add.cshtml",
+              "RelativeDocumentMoniker": "ASPNETCoreMVCsameerStudentPortal\\Views\\Students\\Add.cshtml",
+              "ToolTip": "C:\\Users\\aayush.raj\\github_dotnet\\ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal\\Views\\Students\\Add.cshtml",
+              "RelativeToolTip": "ASPNETCoreMVCsameerStudentPortal\\Views\\Students\\Add.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-02T19:23:14.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StudentsController.cs",
+              "DocumentMoniker": "C:\\Users\\aayush.raj\\github_dotnet\\ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal\\Controllers\\StudentsController.cs",
+              "RelativeDocumentMoniker": "ASPNETCoreMVCsameerStudentPortal\\Controllers\\StudentsController.cs",
+              "ToolTip": "C:\\Users\\aayush.raj\\github_dotnet\\ASPNETCoreMVCsameerStudentPortal\\ASPNETCoreMVCsameerStudentPortal\\Controllers\\StudentsController.cs",
+              "RelativeToolTip": "ASPNETCoreMVCsameerStudentPortal\\Controllers\\StudentsController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T19:17:11.148Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

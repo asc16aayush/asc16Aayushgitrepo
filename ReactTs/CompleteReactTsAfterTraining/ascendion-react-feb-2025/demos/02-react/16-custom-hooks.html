@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        />
+        <title></title>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+        <script type="text/babel">
+            // Custom Hooks - for shared functionality between function components
+            const useCounter = (initialValue) => {
+                const [page, setPage] = React.useState(initialValue);
+
+                const previous = () => setPage((p) => p - 1);
+                const next = () => setPage((p) => p + 1);
+
+                return {
+                    page,
+                    previous,
+                    next,
+                };
+            };
+
+            const WorkshopsList = () => {
+                const { page, previous, next } = useCounter(1);
+
+                return (
+                    <div>
+                        <h1>List of workshops</h1>
+                        <hr />
+                        <button onClick={previous}>Previous</button>
+                        You are on page <strong>{page}</strong>
+                        <button onClick={next}>Next</button>
+                        Lot of other functionality
+                    </div>
+                );
+            };
+
+            const Counter = () => {
+                const {
+                    page: value,
+                    previous: decrement,
+                    next: increment,
+                } = useCounter(0);
+
+                return (
+                    <div>
+                        <button onClick={decrement}>-</button>
+                        {value}
+                        <button onClick={increment}>+</button>
+                    </div>
+                );
+            };
+
+            const root = ReactDOM.createRoot(document.getElementById("root"));
+            root.render(
+                <div className="container my-4">
+                    <WorkshopsList />
+                    <Counter />
+                </div>
+            );
+        </script>
+    </body>
+</html>

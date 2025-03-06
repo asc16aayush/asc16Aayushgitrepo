@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Example</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+    <script type="text/babel">
+      const BusinessCard = ({
+        firstName,
+        designation,
+        company,
+        contact,
+        imageSrc,
+        children,
+      }) => {
+        console.log(children);
+
+        return (
+          <div className="business-card">
+            <img src={imageSrc} alt="Profile" />
+            <h3>{firstName}</h3>
+            <p>
+              {designation} at {company}
+            </p>
+
+            <p>Tel: {contact}</p>
+            <div>{children}</div>
+          </div>
+        );
+      };
+
+      const messageEl = (
+        <React.Fragment>
+          <BusinessCard
+            firstName="Johnny"
+            designation="CEO"
+            company="Example Consulting"
+            contact="223322"
+            imageSrc="./johndoe.png"
+          >
+            <p>this is me</p>
+            <button>-</button>
+            <span>0</span>
+            <button>+</button>
+          </BusinessCard>
+
+          <BusinessCard
+            firstName="deeep"
+            designation="CEOpo"
+            company="Example Consulting"
+            contact="223322"
+            imageSrc="./johndoe.png"
+          > <p>this is me</p>
+            <button>-</button>
+            <span>0</span>
+            <button>+</button></BusinessCard>
+        </React.Fragment>
+      );
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(messageEl);
+    </script>
+  </body>
+</html>

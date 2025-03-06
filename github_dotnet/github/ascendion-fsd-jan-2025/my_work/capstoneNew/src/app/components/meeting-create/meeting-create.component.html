@@ -1,0 +1,10 @@
+<form (submit)="createMeeting()">
+    <input [(ngModel)]="meeting.name" placeholder="Meeting Name" required />
+    <input [(ngModel)]="meeting.date" type="date" required />
+    <input [(ngModel)]="meeting.startTime" type="time" required />
+    <input [(ngModel)]="meeting.endTime" type="time" required />
+    <textarea [(ngModel)]="meeting.description" placeholder="Description"></textarea>
+    <!-- <input [(ngModel)]="attendees" placeholder="Add Attendees (comma separated)" /> -->
+    <button type="submit">Create Meeting</button>
+  </form>
+  

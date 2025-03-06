@@ -1,0 +1,61 @@
+<!-- ! + Enter -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hello React</title>
+        <style>
+            .container {
+                padding: 1em;
+                border: 1px solid #333;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- We will create this UI using React -->
+        <!--
+            <div class="container" id="message">
+                <h1>Hello React</h1>
+                <p>
+                    <strong>React</strong>
+                    is a JavaScript library for building user interfaces.
+                </p>
+            </div>
+        -->
+        <div id="root"></div>
+
+        <!-- React Core (Architect) -->
+        <!-- Aside: When building mobile apps using React Native, we use this -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.js"></script>
+
+        <!-- React DOM (Builder) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.min.js"></script>
+
+        <!-- Babel for browser -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+        <script type="text/babel">
+            // JSX is used to create a React element in a simple fashion
+            // JSX != HTML. JSX syntax ~ HTML syntax
+            // There are differences between JSX and HTML
+            const divReactEl = (
+                <div className="container" id="message">
+                    <h1>Hello React</h1>
+                    <p>
+                        <strong>React</strong>
+                        is a JavaScript library for building user interfaces.
+                    </p>
+                </div>
+            );
+
+            console.log(divReactEl); // React element (blueprint)
+
+            // 2. Give the React element, the reference to where the UI should appear on the page (div#root) (ReactDOM)
+            const root = ReactDOM.createRoot(document.getElementById("root")); // where to create the UI
+
+            root.render(divReactEl); // pass the blueprint as well (the react element)
+        </script>
+    </body>
+</html>

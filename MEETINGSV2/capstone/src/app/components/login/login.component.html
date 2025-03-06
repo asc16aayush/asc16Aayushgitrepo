@@ -1,0 +1,48 @@
+<!-- <h2>Login</h2>
+
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" type="email" />
+  </div>
+  
+  <div>
+    <label for="password">Password:</label>
+    <input id="password" formControlName="password" type="password" />
+  </div>
+
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>
+
+<p>Don't have an account? <a routerLink="/register">Register here</a>.</p> -->
+
+
+<h2>Login</h2>
+
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <!-- Email Field -->
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" type="email" />
+    <!-- Email Validation Errors -->
+    <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+      <small *ngIf="loginForm.get('email')?.errors?.['required']" class="error-message">Email is required.</small>
+      <small *ngIf="loginForm.get('email')?.errors?.['email']" class="error-message">Please enter a valid email address.</small>
+    </div>
+  </div>
+
+  <!-- Password Field -->
+  <div>
+    <label for="password">Password:</label>
+    <input id="password" formControlName="password" type="password" />
+    <!-- Password Validation Errors -->
+    <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+      <small *ngIf="loginForm.get('password')?.errors?.['required']" class="error-message">Password is required.</small>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>
+
+<p>Don't have an account? <a routerLink="/register">Register here</a>.</p>

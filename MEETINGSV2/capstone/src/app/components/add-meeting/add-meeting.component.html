@@ -1,0 +1,81 @@
+<!-- <h2>Add New Meeting</h2>
+
+<form [formGroup]="meetingForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Meeting Name:</label>
+    <input id="name" formControlName="name" type="text" />
+  </div>
+  
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  
+  <div>
+    <label for="date">Date:</label>
+    <input id="date" formControlName="date" type="date" />
+  </div>
+  
+  <div>
+    <label for="startTime">Start Time:</label>
+    <input id="startTime" formControlName="startTime" type="time" />
+  </div>
+  
+  <div>
+    <label for="endTime">End Time:</label>
+    <input id="endTime" formControlName="endTime" type="time" />
+  </div>
+
+  <div>
+    <label for="attendees">Attendees (comma-separated emails):</label>
+    <input id="attendees" formControlName="attendees" type="text" />
+  </div>
+
+  <button type="submit" [disabled]="meetingForm.invalid">Add Meeting</button>
+</form>  -->
+<h2>Add New Meeting</h2>
+
+<form [formGroup]="meetingForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Meeting Name:</label>
+    <input id="name" formControlName="name" type="text" />
+  </div>
+  
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  
+  <div>
+    <label for="date">Date:</label>
+    <input id="date" formControlName="date" type="date" />
+  </div>
+  
+  <div>
+    <label for="startTime">Start Time:</label>
+    <input id="startTime" formControlName="startTime" type="time" />
+  </div>
+  
+  <div>
+    <label for="endTime">End Time:</label>
+    <input id="endTime" formControlName="endTime" type="time" />
+  </div>
+
+  <div>
+    <label for="attendees">Attendees:</label>
+    <select id="attendees" (change)="onAttendeeSelect($event)" multiple>
+      <option *ngFor="let user of users" [value]="user.email">{{ user.email }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="selectedAttendees.length > 0">
+    <h4>Selected Attendees:</h4>
+    <div class="attendee-box" *ngFor="let attendee of selectedAttendees">
+      <span>{{ attendee }}</span>
+      <!-- <button type="button" (click)="onRemoveAttendee(attendee)">Remove</button> -->
+    </div>
+  </div>
+
+  <!-- <button type="submit" [disabled]="meetingForm.invalid">Add Meeting</button> -->
+  <button type="submit" >Add Meeting</button> 
+</form>

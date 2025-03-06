@@ -1,0 +1,46 @@
+<!-- <input [(ngModel)]="searchTerm" (input)="searchMeetings()" placeholder="Search meetings" />
+
+<ul>
+  <li *ngFor="let meeting of filteredMeetings">
+    {{ meeting.name }} - {{ meeting.description }}
+     <button (click)="excuseYourself(meeting.id)">Excuse Yourself</button> 
+    <button *ngIf="meeting.id" (click)="excuseYourself(meeting.id)">Excuse Yourself</button>
+
+  </li>
+</ul> -->
+
+<!-- Search bar for meetings by description -->
+<input [(ngModel)]="searchTerm" (input)="searchMeetings()" placeholder="Search meetings" />
+
+<!-- Dropdown for filtering meetings by status -->
+<select [(ngModel)]="filterStatus" (change)="filterMeetingsByStatus()">
+  <option value="ALL">All</option>
+  <option value="PAST">Past</option>
+  <option value="UPCOMING">Upcoming</option>
+  <option value="TODAY">Today</option>
+</select>
+
+<!-- List of meetings with details and actions -->
+<ul>
+  <li *ngFor="let meeting of filteredMeetings">
+    <strong>{{ meeting.name }}</strong> - {{ meeting.description }}<br />
+    Date: {{ meeting.date }} | Time: {{ meeting.startTime }} - {{ meeting.endTime }}<br />
+    Attendees: {{ meeting.attendees }}<br />
+
+<!-- Add Attendee button
+<button *ngIf="meeting.id" (click)="toggleAddAttendeeDropdown(meeting.id)">Add Attendee</button>
+<select *ngIf="showAttendeeDropdown === meeting.id" (change)="addAttendee(meeting.id!, $event)">
+  <option *ngFor="let user of users" [value]="user.email">{{ user.name }}</option>
+</select> -->
+<!-- Add Attendee button -->
+<button *ngIf="meeting.id" (click)="toggleAddAttendeeDropdown(meeting.id)">Add Attendee</button>
+
+<select *ngIf="showAttendeeDropdown === meeting.id" (change)="addAttendee(meeting.id!, $event)">
+  <option value="" disabled selected>Select the user</option> <!-- Default option -->
+  <option *ngFor="let user of users" [value]="user.email">{{ user.name }}</option>
+</select>
+
+
+<!-- Excuse Yourself button -->
+<button *ngIf="meeting.id" (click)="excuseYourself(meeting.id!)">Excuse Yourself</button>
+

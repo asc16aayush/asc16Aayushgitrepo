@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\aayush.raj\\MEETINGSV2\\Meetings_V2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{33185BA9-192C-4C2D-B847-F5F7499A6629}|Meetings_V2\\Meetings_V2.csproj|c:\\users\\aayush.raj\\meetingsv2\\meetings_v2\\meetings_v2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33185BA9-192C-4C2D-B847-F5F7499A6629}|Meetings_V2\\Meetings_V2.csproj|solutionrelative:meetings_v2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33185BA9-192C-4C2D-B847-F5F7499A6629}|Meetings_V2\\Meetings_V2.csproj|c:\\users\\aayush.raj\\meetingsv2\\meetings_v2\\meetings_v2\\mappings\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33185BA9-192C-4C2D-B847-F5F7499A6629}|Meetings_V2\\Meetings_V2.csproj|solutionrelative:meetings_v2\\mappings\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AutoMapperProfiles.cs",
+              "DocumentMoniker": "C:\\Users\\aayush.raj\\MEETINGSV2\\Meetings_V2\\Meetings_V2\\Mappings\\AutoMapperProfiles.cs",
+              "RelativeDocumentMoniker": "Meetings_V2\\Mappings\\AutoMapperProfiles.cs",
+              "ToolTip": "C:\\Users\\aayush.raj\\MEETINGSV2\\Meetings_V2\\Meetings_V2\\Mappings\\AutoMapperProfiles.cs",
+              "RelativeToolTip": "Meetings_V2\\Mappings\\AutoMapperProfiles.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T10:57:29.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\aayush.raj\\MEETINGSV2\\Meetings_V2\\Meetings_V2\\Program.cs",
+              "RelativeDocumentMoniker": "Meetings_V2\\Program.cs",
+              "ToolTip": "C:\\Users\\aayush.raj\\MEETINGSV2\\Meetings_V2\\Meetings_V2\\Program.cs",
+              "RelativeToolTip": "Meetings_V2\\Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T18:30:44.95Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

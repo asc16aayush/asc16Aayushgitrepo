@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "U8r1YvLD0A0CxqWrNOeWwakuYAtXwzl7WJDiw1YUO7s=",
+  "Source": "AspNetCoreWebApiUdemy",
+  "BasePath": "_content/AspNetCoreWebApiUdemy",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

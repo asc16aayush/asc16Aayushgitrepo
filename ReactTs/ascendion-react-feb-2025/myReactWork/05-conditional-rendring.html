@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        />
+        <title>cond rendring</title>
+
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+        <script type="text/babel">
+            const Invoice=({customer,items,points})=>{
+                console.log(items);
+                return(
+                    <div className="border border-dark p-4">
+                        <h1>Invoice</h1> 
+                        <hr/>
+                        <div>customer: {customer}</div>
+                    
+                        {
+                            points !==undefined &&(
+                                <div> tou have {points} points</div>
+
+                            )
+                        }   
+                        
+                    </div>
+                    
+                );
+
+            };
+
+            const items = [
+                {
+                    id: 1,
+                    name: "Camlin Pen",
+                    price: 50,
+                    quantity: 2,
+                },
+                {
+                    id: 2,
+                    name: "Natraj Pencil",
+                    price: 5,
+                    quantity: 10,
+                },
+                {
+                    id: 3,
+                    name: "Apsara Eraser",
+                    price: 10,
+                    quantity: 5,
+                },
+            ];
+
+
+            const root = ReactDOM.createRoot(document.getElementById("root"));
+            root.render(<section className="container my-4">
+                    <Invoice customer="John Doe" items={items} points={45} />
+                    <Invoice customer="Jane Doe" items={items} />
+                </section>);
+        </script>
+    </body>
+</html>

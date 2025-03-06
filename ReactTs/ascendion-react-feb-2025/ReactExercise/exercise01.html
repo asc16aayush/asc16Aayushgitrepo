@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Exercise</title>
+
+    <style>
+        .container {
+            padding: 1em;
+            border: 1px solid #c50f0f;
+            border-radius: 4px;
+        }
+    </style>
+
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.js"></script>
+
+    <!-- React DOM (Builder) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.min.js"></script>
+
+    <script>
+      const div1 = React.createElement(
+        "div",
+        { className: "container",
+        id: "message",},
+
+        React.createElement("button", {}, "-"),
+        React.createElement("span",null,"0"),
+        React.createElement("button",{id:"counter"},"+"),
+
+
+        
+
+      );
+
+      console.log(div1); // React element (blueprint)
+
+      // 2. Give the React element, the reference to where the UI should appear on the page (div#root) (ReactDOM)
+      const root = ReactDOM.createRoot(document.getElementById("root")); // where to create the UI
+
+      root.render(div1); // pass the blueprint as well (the react element)
+    </script>
+  </body>
+</html>

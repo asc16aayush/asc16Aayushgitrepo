@@ -1,0 +1,16 @@
+<div>
+    <select [(ngModel)]="filter" (change)="getMeetings()">
+      <option value="ALL">All</option>
+      <option value="PAST">Past</option>
+      <option value="TODAY">Today</option>
+      <option value="UPCOMING">Upcoming</option>
+    </select>
+  
+    <ul>
+      <li *ngFor="let meeting of meetings">
+        <strong>{{ meeting.name }}</strong> - {{ meeting.date | date }}
+        <button (click)="excuseSelf(meeting.id)">Excuse Self</button>
+      </li>
+    </ul>
+  </div>
+  

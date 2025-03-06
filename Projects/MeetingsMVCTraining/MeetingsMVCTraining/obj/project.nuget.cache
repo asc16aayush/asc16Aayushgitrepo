@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ErJZd2x60aM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\aayush.raj\\Projects\\MeetingsMVCTraining\\MeetingsMVCTraining\\MeetingsMVCTraining.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aayush.raj\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\aayush.raj\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        />
+        <title>
+            Handling side-effects (API calls) using lifecycle methods in class
+            component
+        </title>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"></script>
+
+        <script type="text/babel">
+            const getWorkshops = async () => {
+                // axios.<method>() returns a Promise - operation goes on in the background and the result will be success / failure
+                const response = await axios.get(
+                    `https://workshops-server.onrender.com/workshops`
+                );
+
+                return response.data;
+            };
+
+            class WorkshopsList extends React.Component {
+                state = {
+                    loading: true,
+                    workshops: [],
+                    error: null,
+                };
+
+                render() {
+                    const { loading, workshops, error } = this.state;
+
+                    return (
+                        <div>
+                            <h1>List of Workshops</h1>
+                            <hr />
+
+                            {loading && (
+                                <div className="text-center">
+                                    <div
+                                        className="spinner-border"
+                                        role="status"
+                                    >
+                                        <span className="visually-hidden">
+                                            Loading...
+                                        </span>
+                                    </div>
+                                </div>
+                            )}
+
+                            {!loading && error && (
+                                <div
+                                    className="alert alert-danger"
+                                    role="alert"
+                                >
+                                    {error.message}
+                                </div>
+                            )}
+
+                            {!loading && !error && (
+                                <div className="row">
+                                    {workshops.map((w) => (
+                                        <div
+                                            className="col col-md-4 d-flex my-3"
+                                            key={w.id}
+                                        >
+                                            <div class="card p-3">
+                                                <img
+                                                    src={w.imageUrl}
+                                                    class="card-img-top"
+                                                    alt={w.name}
+                                                />
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        {w.name}
+                                                    </h5>
+                                                    <p class="card-text">
+                                                        {w.startDate} -{" "}
+                                                        {w.endDate}
+                                                    </p>
+                                                    <a
+                                                        href="#"
+                                                        class="btn btn-primary"
+                                                    >
+                                                        Know more
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    );
+                }
+
+                // called once AFTER the first render (like ngOnInit)
+                async componentDidMount() {
+                    this.setState({
+                        loading: true,
+                    });
+
+                    try {
+                        const workshops = await getWorkshops();
+
+                        // what to do now? we set state and cause a re-render
+                        this.setState({
+                            loading: false,
+                            // workshops: workshops
+                            workshops,
+                        });
+                    } catch (error) {
+                        this.setState({
+                            loading: false,
+                            // error: error,
+                            error,
+                        });
+                    }
+                }
+            }
+
+            const root = ReactDOM.createRoot(document.getElementById("root"));
+            root.render(
+                <div className="container my-4">
+                    <WorkshopsList />
+                </div>
+            );
+        </script>
+    </body>
+</html>
